@@ -10,20 +10,22 @@ function Home() {
     };
 
     return (
-        <StyledTop>
-            <button
-            style={homebtn}
-            onClick={handleButtonClick}
-            >
-                화면 로고 이미지 넣기
-            </button>
-        </StyledTop>
+        <span>
+            <StyledTop>
+                <button
+                style={homebtn}
+                onClick={handleButtonClick}
+                >
+                    화면 로고 이미지 넣기
+                </button>
+            </StyledTop>
+        </span>
     );
 };
 
 export default Home;
 
-const StyledTop = Styled.div`
+const StyledTop = Styled.span`
     /* text-align: center; */
 `;
 
