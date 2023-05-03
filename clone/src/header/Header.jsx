@@ -1,18 +1,27 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import Styled from "styled-components"
-
+import { AiOutlineInstagram } from "react-icons/ai"
+import { AiOutlineMessage }  from "react-icons/ai"
+import { AiFillLock } from "react-icons/ai"
 
 const Header = props => {
-    return (
-        <Top>
-            <Div>사진</Div>
-            <Input type="text" placeholder="검색하기" />
-            <ButtonGroup>
-                <Button>메세지</Button>
-                <Button>로그아웃</Button>
-            </ButtonGroup>
-        </Top>
-    )
+
+  const navigate = useNavigate();
+  const logoutButtonClick = () => {
+    navigate("/")
+  }
+
+  return (
+    <Top>
+      <div><AiOutlineInstagram /></div>
+      <Input type="text" placeholder="검색하기" />
+      <ImgGroup>
+        <div><AiOutlineMessage /></div>
+        <div onClick={logoutButtonClick}><AiFillLock /></div>
+      </ImgGroup>
+    </Top>
+  ) 
 };
 
 export default Header;
@@ -21,27 +30,25 @@ const Top = Styled.header`
     width: 100%;
     font-size: 3rem;
     background-color: yellowgreen;
-    text-align: center;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-`
-const Div = Styled.div`
-    
 `
 
 const Input = Styled.input`
   width: 40%;
   height: 40px; 
 `
-const ButtonGroup = Styled.div`
+
+const ImgGroup = Styled.div`
   display: flex;
   flex-direction: row;
-  gap: 1rem;
+  gap: 2rem;
+  cursor : pointer;
 `;
 
-const Button = Styled.button`
-  width: 100px;
-  height: 50px;
-`
+// const Img = Styled.button`
+//   width: 100px;
+//   height: 50px;
+// `
