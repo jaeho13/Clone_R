@@ -5,7 +5,7 @@ import { AiOutlineHeart } from "react-icons/ai"
 import { FaRegComment } from "react-icons/fa"
 import { BsSend } from "react-icons/bs"
 import { BsDownload } from "react-icons/bs"
-
+import { MdInsertEmoticon } from "react-icons/md"
 
 
 const Post = props => {
@@ -42,13 +42,27 @@ const Post = props => {
                     <div>좋아요 ㅇㅇ개</div>
                     <div>아이디 내용</div>
                 </Comment>
-                <Write type="text" placeholder="댓글 달기..." />
+                <Bottom>
+                    <BottomEmo>
+                        <MdInsertEmoticon />
+                    </BottomEmo>
+                    {/* <input type="text" placeholder="댓글 달기..." /> */}
+                </Bottom>
             </Board >
         </>
     );
 };
 
 export default Post;
+
+const BottomEmo = Styled.div`
+    width: 100%;
+    height: 3rem;
+    font-size:2rem;
+    display: flex;
+    align-items: center;
+
+`
 
 
 const Board = Styled.section`
@@ -97,6 +111,7 @@ const Emoiton = Styled.div`
     display: flex;
     justify-content: space-between;
     font-size:2rem;
+    align-items: center;
 `
 
 const Left = Styled.span`
@@ -114,8 +129,13 @@ const Comment = Styled.div`
     height: 10rem;
 `
 
+const Bottom = Styled.div`
+
+`
+
 const Write = Styled.input`
     border: 1px solid red;
     width: 100%;
     height: 4rem;
 `
+
