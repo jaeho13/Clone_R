@@ -6,6 +6,7 @@ import { FaRegComment } from "react-icons/fa"
 import { BsSend } from "react-icons/bs"
 import { BsDownload } from "react-icons/bs"
 import { MdInsertEmoticon } from "react-icons/md"
+import { BsFillSendFill } from "react-icons/bs"
 
 
 const Post = props => {
@@ -38,15 +39,16 @@ const Post = props => {
                     </Right>
                 </Emoiton>
 
-                <Comment>
+                <Comments>
                     <div>좋아요 ㅇㅇ개</div>
                     <div>아이디 내용</div>
-                </Comment>
+                </Comments>
                 <Bottom>
                     <BottomEmo>
                         <MdInsertEmoticon />
-                    </BottomEmo>
-                    {/* <input type="text" placeholder="댓글 달기..." /> */}
+                        <Write input="text" placeholder="댓글을 입력하세요" />
+                        <BsFillSendFill />
+                     </BottomEmo>
                 </Bottom>
             </Board >
         </>
@@ -54,15 +56,6 @@ const Post = props => {
 };
 
 export default Post;
-
-const BottomEmo = Styled.div`
-    width: 100%;
-    height: 3rem;
-    font-size:2rem;
-    display: flex;
-    align-items: center;
-
-`
 
 
 const Board = Styled.section`
@@ -123,19 +116,29 @@ const Right = Styled.span`
     padding-right: 1rem;
 `
 
-const Comment = Styled.div`
+const Comments = Styled.div`
     border: 1px solid blue;
     width: 100%;
     height: 10rem;
 `
 
 const Bottom = Styled.div`
-
+    
 `
+
+const BottomEmo = Styled.div`
+    width: 100%;
+    height: 3rem;
+    font-size:2rem;
+    display: flex;
+    align-items: center;
+`
+//이거 스마일 이모티콘 센터 넣었는데 가운데가 아닌 이유..
+
 
 const Write = Styled.input`
     border: 1px solid red;
-    width: 100%;
-    height: 4rem;
+    width: 85%;
+    height: 2.5rem;
 `
 
