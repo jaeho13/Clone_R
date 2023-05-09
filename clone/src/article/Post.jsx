@@ -62,8 +62,9 @@ const Board = Styled.section`
     border: 3px solid black;
     width: 40%;
     height: 50rem;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     margin-top: 2rem;
+    margin-left: 30%;
 `
 
 const High = Styled.div`
@@ -132,6 +133,7 @@ const BottomEmo = Styled.div`
     font-size:2rem;
     display: flex;
     align-items: center;
+    justify-content: space-around;
 `
 //이거 스마일 이모티콘 센터 넣었는데 가운데가 아닌 이유..
 

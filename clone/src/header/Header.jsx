@@ -4,7 +4,8 @@ import Styled from "styled-components"
 import { AiOutlineInstagram } from "react-icons/ai"
 import { AiOutlineMessage } from "react-icons/ai"
 import { AiFillLock } from "react-icons/ai"
-import Post from "../article/Post";
+import Post from "../article/Post"
+import Side from "../article/Side";
 
 const Header = props => {
 
@@ -23,7 +24,10 @@ const Header = props => {
           <div onClick={logoutButtonClick}><AiFillLock /></div>
         </ImgGroup>
       </Top>
-      <Post />
+      <Bind>
+        <Post />
+        <Side />
+      </Bind>
     </>
   )
 };
@@ -52,3 +56,8 @@ const ImgGroup = Styled.div`
   gap: 2rem;
   cursor : pointer;
 `;
+
+const Bind = Styled.div`
+  display: flex;
+  flex-direction: row;
+`
